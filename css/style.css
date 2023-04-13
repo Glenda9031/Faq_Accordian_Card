@@ -1,0 +1,221 @@
+/*
+    VARIABLE DECLARATION (GLOBAL SCOPE)
+*/
+
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: (14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+/*
+    IMPORTING FONTS FROM RELATIVE SOURCE
+*/
+
+@font-face {
+    font-family: 'KumbhSans';
+    src: url('./fonts//KumbhSans.woff') format('woff'), url('./fonts/KumbhSans.woff2') format('wwoff2');
+    font-weight: 1 999;
+    font-display: swap;
+}
+
+/*
+    MIN-CSS RESET
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0px solid grey;
+}
+
+/*
+    BODY SECTION
+*/
+
+body {
+    font-family: 'KumbhSans';
+    background: linear-gradient(0deg, var(--soft-blue), var(--soft-violet)) no-repeat;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/*
+    COMPONENT SECTION
+*/
+
+main {
+    text-rendering: optimizeSpeed;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--dark-grayish-blue);
+    width: 92%;
+    min-height: 60vh;
+    max-height: max-content;
+    font-size: .8rem;
+    display: grid;
+    place-items: center;
+    padding-bottom: 50px;
+    position: relative;
+    padding-top: 1em;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1), 0 40px 40px rgba(0, 0, 0, .2);
+    margin-top: 3em;
+}
+
+.main__heading {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 1.9rem;
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
+.main::before {
+    content: '';
+    top: -115px;
+    left: calc(50% - 125px);
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-image: url('.images/illustration-woman-online-mobile.svg'), url('.images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center top 120px;
+}
+
+.main__faq-block {
+    all: unset;
+    width: 90%;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    height: 50px;
+    display: grid;
+    place-items: center;
+    justify-items: normal;
+    position: relative;
+    transition: all .7s ease;
+}
+
+.main__question::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    background-image: url('./images/icon-arrow-down.svg');
+    width: 20px;
+    height: 20px;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .6s ease;
+    cursor: pointer;
+    margin-top: -.1em;
+    top: 1.25em;
+    right: .2em;
+}
+
+.summary::marker {
+    content: "";
+}
+
+.main__faq-block {
+    margin: 0;
+    height: max-content;
+    padding: 1.155em 0;
+}
+
+details[open] .main__faq-block {
+    padding: 3px 0;
+    height: 100px;
+}
+
+details[open] .main__question {
+    font-weight: 600;
+    color: var(--very-dark-desaturated-blue);
+    transition: all .3s ease-in;
+}
+
+details[open] .main__answer {
+    margin-top: .7em;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; transform: translateX(-10px)};
+    100%  {opacity: 1; transform: translateX(0)};
+}
+
+[open] .main__question::after {
+    transform: rotate(-180deg);
+    top: 1.1em;
+    right: .2em;
+}
+
+button,
+textarea,
+input,
+select,
+a,
+details,
+summary {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main__question {
+    cursor: pointer;
+}
+
+.main__question:hover {
+    color: var(--soft-red);
+}
+
+.main__faq-section {
+    width: 90%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.main__faq-block:first-of-type {
+    margin-top: 16em;
+}
+
+.main__heading {
+    position: absolute;
+    top: 4.75em;
+}
+
+/*
+    FOOTER
+*/
+
+.attribution {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    font-size: .8em;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.attribution, a {
+    transition: .5s ease;
+    color: #f7f7f7;
+}
+
