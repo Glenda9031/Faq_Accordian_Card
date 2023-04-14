@@ -219,3 +219,155 @@ summary {
     color: #f7f7f7;
 }
 
+/*
+    ANIMATION
+*/
+
+.fade-in-animation {
+    -webkit-animation: fade-in 1.8s cubic-bezier(0.39, 0.575, 0.565,'1') both;
+    animation: fade-in 1.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 375px) { /* FOR MOBILES WITH VERY SMALL SCREENS */
+    body {
+        padding-top: 6em;
+        padding-bottom: 3.5em;
+    }
+}
+
+@media (min-width: 35.75em) { /* FOR TABLETS */
+    main {
+        width: 32em;
+    }
+
+    main::before {
+        top: -155px;
+        left: calc(50% - 175px);
+        width: 350px;
+        height: 350px;
+        background-position: center top, center top 160px;
+        background-size: 95%, 95%;
+    }
+
+    .attribution {
+        font-size: .95rem;
+    }
+}
+
+@media (min-width: 56.25em) { /* FOR DESKTOPS */
+    main {
+        width: 71.95em;
+        grid-template-columns: 1fr 1fr;
+        min-height: unset;
+        max-height: unset;
+        height: 39.75em;
+        padding: 0;
+        margin-left: 3.2em;
+        border-radius: 23px;
+        position: relative;
+        margin-top: 0;
+        justify-items: start;
+    }
+
+    main::before {
+        content: '';
+        width: 100px;
+        height: 200px;
+        z-index: 2;
+        background-image: url('./images/illustration-box-desktop.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: unset;
+        position: absolute;
+        left: -3.6em;
+        top: 15.4em;
+        filter: drop-shadow(0 13px 15px rgba(0, 0, 0, .3));
+    }
+
+    .main__illustration {
+        width: 100%;
+        height: 100%;
+        background-image: url('./images/illustration-woman-online-desktop.svg'), url('./images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 710% 52%, 122% 62%;
+        background-size: 102.5%, 170%;
+        margin-bottom: 1.15em;
+    }
+
+    .main__heading,
+    .main__faq-block {
+        grid-column: 2/-1;
+    }
+
+    .main__faq-section {
+        grid-column: 2;
+        padding: 0 17.5px;
+        margin-top: 1em;
+        width: 31em;
+        padding-bottom: .3em;
+        position: static;
+        justify-items: start;
+    }
+
+    .main__faq-block {
+        width: 94%;
+        font-size: .88rem;
+    }
+
+    .main__heading {
+        margin: 0;
+        align-self: flex-start;
+        justify-self: flex-start;
+        font-size: 1.9rem;
+        position: absolute;
+        top: 2.10em;
+        left: .55em;
+    }
+
+    .main__dropdown-arrow-btn {
+        width: 17px;
+        height: 17px;
+        margin-top: .15em;
+        margin-right: .2em;
+    }
+
+    .main__faq-block:first-of-type {
+        margin-top: 2.2rem;
+    }
+
+    .main__answer {
+        margin-top: -2.9em;
+        font-size: .757rem;
+        line-height: 1.5em;
+        margin-left: -.1em;
+    }
+
+    .summary:focus-visible {
+        outline: .15em dotted #111;
+        outline-offset: .4em;
+    }
+
+    .attribution a:hover {
+        color: #fff;
+    }
+}
+
